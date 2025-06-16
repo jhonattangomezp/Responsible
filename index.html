@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MGR Auto Import ‑ Concesionario</title>
-
-    <!-- Enlazamos la hoja de estilos externa -->
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MGR Auto Import</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Encabezado semántico -->
-    <header>
-        <h1>MGR Auto Import</h1>
-        <p>Tu próximo vehículo está aquí</p>
-    </header>
 
-    <!-- Contenido principal -->
-    <main>
-        <!-- Sección de catálogo -->
-        <section class="catalogo">
-            <!-- Vehículo 1 -->
-            <article class="vehiculo">
-                <img
-                    src="img/ToyotaCorolla.jpg"
-                    alt="Toyota Corolla LE, 2007, Gris Plata, Version Americana, Recien Importado"
-                />
-                <h2>oyota Corolla LE, 2007</h2>
-                <p class="precio">$15,000 USD</p>
-                <a href="#" class="btn">Ver detalles</a>
-            </article>
+  <header>
+    <h1>MGR Auto Import</h1>
+    <p>Tu próximo vehículo está aquí</p>
+  </header>
 
-            <!-- Vehículo 2 -->
-            <article class="vehiculo">
-                <img
-                    src="img/ToyotaSiena.jpg"
-                    alt="SUV familiar azul"
-                />
-                <h2>TOYOTA SIENNA, AÑO 2006, COLOR ROJO VINO, RECIEN IMPORTADA, VERSION AMERICANA, EXCELENTES CONDICIONES</h2>
-                <p class="precio">$23,000 USD</p>
-                <a href="#" class="btn">Ver detalles</a>
-            </article>
-        </section>
-    </main>
+  <main>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2025 MGR Auto Import. Todos los derechos reservados.</p>
-    </footer>
+    <!-- CATÁLOGO DE VEHÍCULOS -->
+    <section class="catalogo">
+      <article class="vehiculo animated-card">
+        <img src="ToyotaCorolla.jpg" alt="Corolla Sedan" />
+        <h2>Sedán Deportivo X1</h2>
+        <p class="precio">$15, USD</p>
+        <a href="#" class="btn">Ver detalles</a>
+      </article>
+
+      <article class="vehiculo animated-card">
+        <img src="ToyotaSiena.jpg" alt="Toyota Sienna" />
+        <h2>SUV Familiar Z3</h2>
+        <p class="precio">$23,000 USD</p>
+        <a href="#" class="btn">Ver detalles</a>
+      </article>
+    </section>
+
+    <!-- SLIDER INFINITO -->
+    <section class="slider-infinito">
+      <div class="slider-track">
+        <div class="slide"><img src="ToyotaCorolla.jpg" alt="Auto" /></div>
+        <div class="slide"><img src="ToyotaSiena.jpg" alt="Auto" /></div>
+        
+        <!-- Duplicados para efecto infinito -->
+        <div class="slide"><img src="ToyotaCorolla.jpg" alt="Auto" /></div>
+        <div class="slide"><img src="ToyotaSiena.jpg" alt="Auto" /></div>
+        </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MGR Auto Import. Todos los derechos reservados.</p>
+  </footer>
+
 </body>
 </html>
