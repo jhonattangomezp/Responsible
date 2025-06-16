@@ -1,0 +1,77 @@
+/* 1) Estilos base de toda la página */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;                      /* Elimina márgenes por defecto */
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f4f7fa;      /* background-color */
+    color: #333;                    /* color */
+}
+
+/* 2) Encabezado */
+header {
+    background-color: #0b3d91;      /* fondo azul corporativo */
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;             /* padding */
+}
+header h1 {
+    margin: 0;                      /* margin */
+    font-size: 2.2rem;              /* font-size */
+}
+
+/* 3) Sección catálogo: usamos Flexbox */
+.catalogo {
+    display: flex;                  /* display: flex */
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 3rem 1rem;
+}
+
+/* 4) Tarjetas de vehículo */
+.vehiculo {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;      /* border */
+    border-radius: 8px;             /* border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06); /* box-shadow */
+    width: 280px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    padding-bottom: 1.5rem;
+}
+.vehiculo img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.vehiculo h2 {
+    font-size: 1.3rem;
+    margin: 1rem 0 0.25rem;
+}
+.precio {
+    font-size: 1.1rem;
+    color: #0b8f00;
+    margin: 0.25rem 0 1rem;
+}
+
+/* Efecto hover para la tarjeta */
+.vehiculo:hover {                   /* :hover */
+    transform: translateY(-6px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* 5) Botón */
+.btn {
+    display: inline-block;
+    background-color: #0b3d91;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.btn:hover {                        /* :hover */
+    background-color: #092c6c;
+}
