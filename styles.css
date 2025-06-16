@@ -1,77 +1,134 @@
-/* 1) Estilos base de toda la página */
+/* RESET Y ESTILO GLOBAL */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body {
-    margin: 0;                      /* Elimina márgenes por defecto */
-    font-family: "Segoe UI", sans-serif;
-    background-color: #f4f7fa;      /* background-color */
-    color: #333;                    /* color */
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
 }
-
-/* 2) Encabezado */
 header {
-    background-color: #0b3d91;      /* fondo azul corporativo */
-    color: #fff;
-    text-align: center;
-    padding: 2rem 1rem;             /* padding */
+  background-color: #1a2a6c;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 header h1 {
-    margin: 0;                      /* margin */
-    font-size: 2.2rem;              /* font-size */
+  font-size: 2rem;
+}
+header p {
+  font-size: 1.1rem;
 }
 
-/* 3) Sección catálogo: usamos Flexbox */
+/* CATÁLOGO FLEX RESPONSIVE */
 .catalogo {
-    display: flex;                  /* display: flex */
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 3rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 1rem;
 }
-
-/* 4) Tarjetas de vehículo */
 .vehiculo {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;      /* border */
-    border-radius: 8px;             /* border-radius */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06); /* box-shadow */
-    width: 280px;
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-    padding-bottom: 1.5rem;
+  background-color: #fff;
+  width: 280px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 .vehiculo img {
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .vehiculo h2 {
-    font-size: 1.3rem;
-    margin: 1rem 0 0.25rem;
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem;
 }
 .precio {
-    font-size: 1.1rem;
-    color: #0b8f00;
-    margin: 0.25rem 0 1rem;
+  font-size: 1.1rem;
+  color: #28a745;
+  margin-bottom: 1rem;
 }
-
-/* Efecto hover para la tarjeta */
-.vehiculo:hover {                   /* :hover */
-    transform: translateY(-6px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-}
-
-/* 5) Botón */
 .btn {
-    display: inline-block;
-    background-color: #0b3d91;
-    color: #fff;
-    padding: 0.6rem 1.2rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.9rem;
+  background-color: #1a2a6c;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
-.btn:hover {                        /* :hover */
-    background-color: #092c6c;
+.btn:hover {
+  background-color: #0f1a3f;
+}
+.vehiculo:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ANIMACIÓN DE APARICIÓN */
+.animated-card {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SLIDER INFINITO */
+.slider-infinito {
+  overflow: hidden;
+  background: #fff;
+  padding: 2rem 0;
+}
+.slider-track {
+  display: flex;
+  width: calc(300px * 8);
+  animation: scroll 20s linear infinite;
+}
+.slide {
+  width: 300px;
+  flex-shrink: 0;
+  padding: 0 10px;
+}
+.slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* FOOTER */
+footer {
+  background-color: #1a2a6c;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .catalogo {
+    flex-direction: column;
+    align-items: center;
+  }
+  .slider-track {
+    animation-duration: 30s;
+  }
 }
